@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+    --font-color: tomato;
+    --font-bg-color: #fff;
+    --btn-font-color: tomato;
+    --btn-bg-color: tomato;
+    --btn-hover-bg-color: tomato;
+    --btn-hover-font-color: white;
+    --border-color: tomato;
+    --border-btn-color: tomato;
+    --border-div-color: tomato;
+    --box-shadow-color: tomato;
+}
+
+body {
+    background-color: rgb(255, 245, 244);
+}
+
+/*index page*/
+.container {
+    height: 100vh;
+    width: 100vw;
+    max-width: 80rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.container>* {
+    width: 100%;
+}
+
+
+h1 {
+    font-size: 5rem;
+    color: var(--font-color);
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 5rem;
+}
+
+.flex-column {
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    flex-direction: column;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.btn {
+    font-size: 1.8rem;
+    text-align: center;
+    width: 15rem;
+    padding: 1rem 0;
+    border: 0.1rem solid var(--border-btn-color);
+    margin-bottom: 1rem;
+    text-decoration: none;
+    color: var(--btn-font-color);
+    border-radius: 0.5rem;
+
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: var(--btn-hover-bg-color);
+    color: var(--btn-hover-font-color);
+    box-shadow: 0 0.4rem 1.2rem 0 var(--box-shadow-color);
+    transform: translateY(-0.2rem);
+    transition: transform 150ms;
+}
+
+.btn[disabled]:hover {
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+/*game page*/
+#hud {
+    display: flex;
+    justify-content: space-between;
+}
+
+/*end page*/
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    margin-bottom: 1rem;
+    width: 18rem;
+    padding: 1.5rem;
+    font-size: 1.8rem;
+    border: none;
+    box-shadow: 0 0.1rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+    text-align: center;
+    outline: none;
+}
+
+input::placeholder {
+    color: var(--font-color);
+} 
+
+/*High Score*/
+.flex {
+    display: flex;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+h2 {
+
+    font-size: 4rem;
+    color: var(--font-color);
+    font-family: 'Times New Roman', Times, serif;
+    /* margin-bottom: 5rem; */
+}
+
+.score {
+    width: 100%;
+    justify-content: space-between;
+}
+
+/*High score Page*/
+
+ol {
+    height: 50%;
+    width: 80%;
+}
+
+li {
+    list-style-type: none;
+    padding: 1.5rem;
+    text-transform: capitalize;
+    font-family:'Segoe UI', Tahoma;
+    color: rgb(65, 65, 65);
+    border-radius: 1rem;
+    counter-increment: item;
+}
+li:before{
+    content: counter(item);
+    margin-right: 2.5rem;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 80%;
+    background-color: #ee5252;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 0.3rem 0.8rem;
+    border-radius: 0.3rem;
+    transition: ease-in-out;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+li:nth-of-type(even){
+    background-color: rgb(251, 215, 208);
+}
+li:nth-child(odd){
+    background-color: rgb(236, 237, 238);
+}
+
+#highScoresList {
+    margin-bottom: 4rem;
+    cursor: pointer;
+}
+
+.high-score {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.high-score:hover {
+    transform: scale(1.150);
+}
+
+/*loader*/
+#loader{
+    border: 1.6rem solid #fff;
+    border-radius: 50%;
+    border-top: 1.6rem solid tomato;
+    width: 12.5rem;
+    height: 12.5rem;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(-50%,-50%);
+
+}
+@keyframes spin {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform:rotate(360deg);
+    }
+}
